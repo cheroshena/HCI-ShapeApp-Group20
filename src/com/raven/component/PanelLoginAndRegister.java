@@ -1,16 +1,17 @@
 package com.raven.component;
 
+import com.raven.main.Main;
 import com.raven.swing.Button;
 import com.raven.swing.MyPasswordField;
 import com.raven.swing.MyTextField;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
+
+import java.awt.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JOptionPane;
+import com.raven.main.ShapeApp;
 
 public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
 
@@ -47,8 +48,6 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         cmd.addActionListener(e -> {
             if (txtUser.getText().isEmpty() || txtEmail.getText().isEmpty() || txtPass.getPassword().length == 0) {
                 JOptionPane.showMessageDialog(this, "Please fill all the fields", "Empty Fields", JOptionPane.WARNING_MESSAGE);
-            } else {
-                // Perform sign up action
             }
         });
         register.add(cmd, "w 40%, h 40");
@@ -79,11 +78,8 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         cmd.setForeground(new Color(250, 250, 250));
         cmd.setText("SIGN IN");
         cmd.addActionListener(e -> {
-            if (txtEmail.getText().isEmpty() || txtPass.getPassword().length == 0) {
-                JOptionPane.showMessageDialog(this, "Please fill all the fields", "Empty Fields", JOptionPane.WARNING_MESSAGE);
-            } else {
-                // Perform sign in action
-            }
+            ShapeApp shapeApp = new ShapeApp();
+            shapeApp.setVisible(true);
         });
         login.add(cmd, "w 40%, h 40");
 
