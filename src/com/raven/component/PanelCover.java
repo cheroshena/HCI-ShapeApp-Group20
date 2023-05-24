@@ -13,6 +13,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
+import com.raven.main.ShapeApp;
 public class PanelCover extends javax.swing.JPanel {
 
     private final DecimalFormat df = new DecimalFormat("##0.###", DecimalFormatSymbols.getInstance(Locale.US));
@@ -52,7 +53,8 @@ public class PanelCover extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent ae) {
 
-                event.actionPerformed(ae);
+                ShapeApp shapeApp = new ShapeApp();
+                shapeApp.setVisible(true);
             }
         });
         add(button, "w 60%, h 40");
