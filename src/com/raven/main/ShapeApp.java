@@ -25,18 +25,6 @@ public class ShapeApp extends JFrame {
     public ShapeApp() {
         setTitle("Shape Application");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        int width = 400;
-        int height = 400;
-        setSize(width, height);
-        // Calculate the center coordinates of the screen
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int centerX = (screenSize.width - width) / 2;
-        int centerY = (screenSize.height - height) / 2;
-
-        // Set the location of the window to the center
-        setLocation(centerX, centerY);
-
         setLayout(new BorderLayout());
 
         // Input Panel
@@ -83,7 +71,7 @@ public class ShapeApp extends JFrame {
         actionPanel.add(deleteButton);
 
         canvas = new JPanel();
-        canvas.setPreferredSize(new Dimension(400, 400));
+        canvas.setPreferredSize(new Dimension(932, 363));
 
         add(inputPanel, BorderLayout.NORTH);
         add(actionPanel, BorderLayout.CENTER);
@@ -152,6 +140,7 @@ public class ShapeApp extends JFrame {
         });
 
         pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
